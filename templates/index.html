@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Login</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-container">
+        <h2>Login</h2>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+
+          <button type="submit">Entrar</button>
+        </form>
+
+        <p class="switch-form">
+          Não tem uma conta? <a href="#" id="showRegister">Cadastre-se</a>
+        </p>
+      </div>
+
+      <div class="register-container hidden">
+        <h2>Cadastro</h2>
+
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="regUsername">Usuário:</label>
+            <input type="text" id="regUsername" name="username" required />
+          </div>
+
+          <div class="form-group">
+            <label for="regPassword">Senha:</label>
+            <input type="password" id="regPassword" name="password" required />
+          </div>
+
+          <div class="form-group">
+            <label for="regConfirmPassword">Confirmar Senha:</label>
+            <input
+              type="password"
+              id="regConfirmPassword"
+              name="confirm_password"
+              required
+            />
+          </div>
+
+          <button type="submit">Cadastrar</button>
+        </form>
+
+        <p class="switch-form">
+          Já tem uma conta? <a href="#" id="showLogin">Fazer login</a>
+        </p>
+      </div>
+
+      <div id="message" class="message hidden"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
